@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+/* Escreva um programa que peça ao usuário para entrar com dois números. O
+   programa deve usar uma função para calcular a média harmônica dos números e
+   retornar esse resultado para a função principal, que deve então apresentar o
+   resultado na tela. 
+
+   Entre com um número: 4.4
+   Entre com outro número: 6.2
+   A média harmônica dos números é 5.14717
+
+   A média harmônica de dois números x e y é igual a 2.0 * x * y / (x+y). */
+
+float harmonica(float, float);
+
+int main()
+{
+	float n1, n2;
+	
+	cout << "Digite Um Numero: ";
+	cin >> n1;
+	cout << "Digite outro numero ";
+	cin >> n2;
+
+	harmonica(n1, n2);
+}
+
+float harmonica(float x, float y)
+{
+	float media;
+
+	media = 2 * x * y / (x + y);
+
+	cout << "A Media Harmonica Entre Os Numeros eh : " << media;
+	
+	return media;
+}
