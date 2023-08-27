@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int num;
+int f();
+int g();
+int main()
+{
+	num = 1;
+	cout << f() + g() + num << endl;
+}
+int f()
+{
+	num = num + 3;
+	return num;
+}
+int g()
+{
+	num = 2;
+	return num;
+}
+
+/* No main, o valor 1 é atribuído à variável global num.
+A função f() é chamada:
+Ela atualiza num para 1 + 3 = 4 e retorna 4.
+A função g() é chamada:
+Ela atualiza num para 2 e retorna 2.
+Os valores retornados por f() (4) e g() (2) são somados ao valor atual de num (2), 
+resultando em 4 + 2 + 2 = 8. */
