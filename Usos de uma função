@@ -1,0 +1,56 @@
+/* Existem muitas formas de escrever um programa com funções. Uma dúvida
+comum é o que colocar na função e o que deixar no programa principal. Veja, por
+exemplo, duas soluções diferentes para um mesmo programa. */
+
+// versão 1
+#include <iostream>
+using namespace std;
+void alarme();
+int lerSenha();
+int main()
+{
+	cout << "Iniciando...\n";
+	alarme();
+	cout << "Senha: ";
+	int senha = lerSenha();
+}
+void alarme()
+{
+	cout << '\a';
+}
+int lerSenha()
+{
+	int n;
+	cin >> n;
+	return n;
+}
+
+// versão 2
+#include <iostream>
+using namespace std;
+void alarme();
+void lerSenha();
+int main()
+{
+	alarme();
+	lerSenha();
+}
+void alarme()
+{
+	cout << "Iniciando...\n";
+	cout << '\a';
+}
+void lerSenha()
+{
+	cout << "Senha: ";
+	int senha;
+	cin >> senha;
+}
+
+/* Mas imagine que, após a leitura da senha, fosse necessário mostrar a mensagem
+“Finalizando…” e emitir outra vez o alarme. Como isso poderia ser feito em cada
+versão? */
+
+/* RESPOSTA: 
+   1. Basta colocar um cout "Finalizando" e um alarme na função main
+   2. Terá que criar uma outra função finalizando() */
