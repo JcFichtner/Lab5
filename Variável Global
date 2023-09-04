@@ -2,8 +2,10 @@
 using namespace std;
 
 int num;
+
 int f();
 int g();
+
 int main()
 {
 	num = 1;
